@@ -1,0 +1,23 @@
+default: &default
+  adapter: mysql2
+  encoding: utf8
+  pool: 5
+  host: <%= ENV['JMAPI18N_DATABASE'] %>
+  username: jmapi18nuser
+  password: <%= ENV['JMAPI18N_DATABASE_PASSWORD'] %>
+
+development: &development
+  <<: *default
+  database: jmapi18n_development
+
+test:
+  <<: *development
+  database: jmapi18n_test
+
+staging:
+  <<: *default
+  database: jmapi18n_staging
+
+production:
+  <<: *default
+  database: jmapi18n_production

@@ -1,0 +1,2 @@
+module FindAreasBuildingsHelper
+end

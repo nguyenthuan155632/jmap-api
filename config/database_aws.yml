@@ -1,0 +1,23 @@
+default: &default
+  adapter: mysql2
+  encoding: utf8
+  pool: 5
+  host: <%= ENV['JMAPAPI_DATABASE'] %>
+  username: jmapapiuser
+  password: <%= ENV['JMAPAPI_DATABASE_PASSWORD'] %>
+
+development: &development
+  <<: *default
+  database: jmapapi_development
+
+test:
+  <<: *development
+  database: jmapapi_test
+
+staging:
+  <<: *default
+  database: jmapapi_staging
+
+production:
+  <<: *default
+  database: jmapapi_production

@@ -1,0 +1,2 @@
+module GetAreasHelper
+end
